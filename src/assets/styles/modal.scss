@@ -1,7 +1,7 @@
 @import "./colors.scss";
 @import "./mixins.scss";
 
-.container {
+.modal {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -50,8 +50,8 @@
 
     .error {
       position: absolute;
-      color: $base-danger-color;
       bottom: 150px;
+      color: $base-danger-color;
 
       h3 {
         @include font-medium-m;
@@ -61,6 +61,7 @@
         }
       }
     }
+
     .enter_button {
       width: 250px;
       height: 50px;
