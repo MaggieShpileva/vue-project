@@ -1,20 +1,11 @@
-# test-task
+Тестовое задание Frontend Junior
 
-## Project setup
-```
-npm install
-```
+Сайт реализован  по макету https://www.figma.com/file/f82S6P6oe876rjoT9KjcOl/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-Frontend?type=design&node-id=2-3&mode=design&t=jBZmvR6L8QhFX6ZA-0
 
-### Compiles and hot-reloads for development
-```
+Приложение создано с помощью фреймворка VUE3. На сайте есть мобильная и планшетная версии. 
+Зайти в личный кабинет можно по данным login: Segrei password: qwerty123
+
+также дополнительные полользатели находятся в папке data - users
+
+Для запуска проекта необходимо использовать команду
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue-project
