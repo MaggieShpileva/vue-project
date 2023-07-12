@@ -1,38 +1,31 @@
 <template>
-  <header>
-    <div class="logo">
-      <router-link to="/">logo</router-link>
+  <div class="account">
+    <div className="title" v-if="userName === null">
+      <h1>Вы не авторизованы</h1>
     </div>
-    <div class="buttons">
-      <div class="contacts">
-        <router-link to="/contacts">Контакты</router-link>
+    <div v-else className="title">
+      <h1>Привет, {{ userName }}</h1>
+      <div className="buttons">
+        <Button type="primary" className="exit_button" @click="handleClickExit">
+          Выйти из аккаунта
+        </Button>
+        <Button
+          type="secondary"
+          className="contact_button"
+          @click="this.$router.push('/contacts')"
+        >
+          Перейти в контакты
+        </Button>
       </div>
-
-      <Button
-        type="header"
-        class="exit_button"
-        @click="handleClickExit"
-        v-if="userName !== null"
-      >
-        Выйти
-      </Button>
-      <Button
-        type="header"
-        class="enter_button"
-        @click="handleClickEnter"
-        v-else
-      >
-        Войти
-      </Button>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>
 import Button from "@/components/Button.vue";
 
 export default {
-  name: "Header",
+  name: "Account",
   components: {
     Button,
   },
@@ -50,17 +43,11 @@ export default {
       this.userName = null;
       this.$router.push("/");
     },
-
-    handleClickEnter() {
-      this.$store.commit("SET_MODAL", true);
-    },
   },
   watch: {
     "$store.state.isAuth"(newValue, oldValue) {
       if (newValue === true) {
         this.userName = localStorage.getItem("name");
-      } else {
-        this.userName = null;
       }
     },
   },
@@ -68,5 +55,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/styles/header.scss";
+@import "@/assets/styles/account.scss";
 </style>

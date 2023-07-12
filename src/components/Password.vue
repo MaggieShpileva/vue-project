@@ -9,16 +9,6 @@
         v-model="changePassword"
         @blur="onChange"
       />
-      <!-- <div
-          class={
-            visiblePassword
-              ? styles.visible_password
-              : styles.unvisible_password
-          }
-          onClick={() => {
-            setVisiblePassword(!visiblePassword);
-          }}
-        ></div> -->
     </div>
     <p v-if="validationPassword">{{ warningPassword }}</p>
   </div>

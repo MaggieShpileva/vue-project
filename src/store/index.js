@@ -5,6 +5,7 @@ export default createStore({
     isOpen: false,
     login: "",
     password: "",
+    isAuth: false,
   },
   getters: {
     MODAL: (state) => {
@@ -16,6 +17,9 @@ export default createStore({
     PASSWORD: (state) => {
       return state.password;
     },
+    isAuth: (state) => {
+      return state.isAuth;
+    },
   },
   mutations: {
     SET_MODAL: (state, payload) => {
@@ -26,6 +30,9 @@ export default createStore({
     },
     SET_PASSWORD: (state, payload) => {
       state.password = payload;
+    },
+    SET_IS_AUTH: (state, payload) => {
+      state.isAuth = payload;
     },
   },
   actions: {
@@ -40,6 +47,9 @@ export default createStore({
     },
     PUT_PASSWORD: (context, payload) => {
       context.commit("SET_PASSWORD", payload);
+    },
+    OPEN_MODAL: (context, payload) => {
+      context.commit("SET_IS_AUTH", payload);
     },
   },
   modules: {},

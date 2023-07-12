@@ -1,7 +1,6 @@
 <template>
   <div class="contacts">
     <p>Контакты</p>
-    <!-- {isOpen && <Modal />} -->
   </div>
 </template>
 

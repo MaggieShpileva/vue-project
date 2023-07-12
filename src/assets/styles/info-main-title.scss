@@ -37,6 +37,9 @@
 
   .buttons {
     margin-top: 34px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     .enter_button {
       width: 128px;

@@ -49,7 +49,6 @@ export default {
     },
 
     handleClick() {
-      // this.$store.state;
       if (this.$store.state.login !== "" && this.$store.state.password !== "") {
         const user = data.find(
           (item) => item.login === this.$store.state.login
@@ -60,10 +59,11 @@ export default {
         } else if (user.password !== this.$store.state.password) {
           this.error = "Неправильный пароль";
         } else {
-          console.log("good");
+          localStorage.setItem("name", user.name);
           this.$store.commit("SET_MODAL", false);
+          this.$store.commit("SET_IS_AUTH", true);
+          this.$router.push("/account");
         }
-        console.log(user);
       } else {
         this.error = "Введите логин и пароль";
       }
