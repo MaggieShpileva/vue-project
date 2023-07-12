@@ -30,6 +30,7 @@ header {
   .logo {
     @include font-bold-m;
     color: $base-text-color;
+    cursor: pointer;
   }
 
   .buttons {

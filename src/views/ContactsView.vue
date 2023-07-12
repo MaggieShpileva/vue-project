@@ -1,24 +1,20 @@
 <template>
-  <div>
-    <Header></Header>
-    <div class="container">
-      <p>Контакты</p>
-    </div>
+  <div class="contacts">
+    <p>Контакты</p>
     <!-- {isOpen && <Modal />} -->
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import Modal from "@/components/Modal.vue";
 
 export default {
-  name: "Contacts",
+  name: "ContactsView",
   components: {
-    Header,
+    Modal,
   },
 };
 </script>
-
 <style scoped lang="scss">
 @import "@/assets/styles/contacts.scss";
 </style>

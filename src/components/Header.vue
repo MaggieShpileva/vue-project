@@ -7,21 +7,20 @@
       <div class="contacts">
         <router-link to="/contacts">Контакты</router-link>
       </div>
-      <!-- {userName !== undefined ? (
       <Button
         type="header"
-        class="{styles.exit_button}"
-        onClick="{handleClickExit}"
+        class="exit_button"
+        @click="handleClickExit"
+        v-if="userName !== undefined"
       >
         Выйти
       </Button>
-      ) : (
-     
-      )} -->
+      <!-- Ваш код для кнопки Войти -->
       <Button
         type="header"
-        classNames="enter_button"
-        onClick="{handleClickEnter}"
+        class="enter_button"
+        @click="handleClickEnter"
+        v-else
       >
         Войти
       </Button>
@@ -36,6 +35,19 @@ export default {
   name: "Header",
   components: {
     Button,
+  },
+  data() {
+    return {
+      userName: undefined,
+    };
+  },
+  methods: {
+    handleClickExit() {
+      // Логика для обработки выхода
+    },
+    handleClickEnter() {
+      this.$store.commit("SET_MODAL", true);
+    },
   },
 };
 </script>

@@ -7,17 +7,6 @@
       <div class="inputs">
         <Login />
         <Password />
-        <!-- <Login
-            login={login}
-            setLogin={setLogin}
-            isLogin={isLogin}
-            setError={setError}
-          /> -->
-        <!-- <Password
-            password={password}
-            setPassword={setPassword}
-            isPassword={isPassword}
-          /> -->
       </div>
       <!-- {error !== "" && (
           <div class="error}>
@@ -27,7 +16,7 @@
 
       <Button type="primary" className="enter_button"> Вход </Button>
     </div>
-    <div class="bg"></div>
+    <div class="bg" @click="closeModal"></div>
   </div>
 </template>
 
@@ -42,6 +31,11 @@ export default {
     Login,
     Password,
     Button,
+  },
+  methods: {
+    closeModal() {
+      this.$store.commit("SET_MODAL", false);
+    },
   },
 };
 </script>

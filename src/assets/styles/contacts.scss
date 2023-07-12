@@ -1,6 +1,6 @@
 @import "./mixins.scss";
 
-.container {
+.contacts {
   @include mobile_container {
     padding: 100px 10px 0 11px;
   }
